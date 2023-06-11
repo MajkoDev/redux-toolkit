@@ -1,30 +1,17 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Counter from "../01-counter/Counter";
 
-import AddPostForm from "../posts/AddPostForm";
-import PostsList from "../posts/PostsList";
-import SinglePostPage from "../posts/SinglePostPage";
+// import AddPostForm from "../02-post-simple/AddPostForm";
+// import PostsList from "../02-post-simple/PostsList";
 
-import "./App.css";
-import Navbar from "./Navbar";
+import AddPostForm from "../03-post-intermediate/AddPostForm";
+import PostsList from "../03-post-intermediate/PostsList";
 
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <AddPostForm />
-              <PostsList />
-            </>
-          }
-        />
-
-        <Route path="/posts/:postId" component={<SinglePostPage />} />
-      </Routes>
-    </Router>
+    <div className="App">
+      <PostsList />
+      <AddPostForm />
+    </div>
   );
 }
 
