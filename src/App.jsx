@@ -1,10 +1,3 @@
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
-
 import Counter from "../01-counter/Counter";
 
 // import AddPostForm from "../02-post-simple/AddPostForm";
@@ -12,24 +5,27 @@ import Counter from "../01-counter/Counter";
 
 import AddPostForm from "../03-post-intermediate/AddPostForm";
 import PostsList from "../03-post-intermediate/PostsList";
+import SinglePostPage from "../03-post-intermediate/SinglePostPage";
+import Navbar from "../03-post-intermediate/Navbar";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <Router>
-      <Switch>
+    <>
+      <Navbar />
+      <Routes>
         <Route
-          exact
           path="/"
-          render={() => (
-            <React.Fragment>
-              <PostsList />
+          element={
+            <>
+              <PostsList /> 
               <AddPostForm />
-            </React.Fragment>
-          )}
+            </>
+          }
         />
-        <Redirect to="/" />
-      </Switch>
-    </Router>
+        
+      </Routes>
+    </>
   );
 }
 
