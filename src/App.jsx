@@ -24,7 +24,7 @@ const router = createBrowserRouter(
       <Route path="posts/:id" element={<SinglePostPage />} />
 
       <Route path="add" element={<AddPostForm />} />
-      <Route path="edit" element={<EditPostForm />} />
+      <Route path="edit/:id" element={<EditPostForm />} />
     </Route>
   )
 );
