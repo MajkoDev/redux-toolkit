@@ -1,14 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-
+import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import PostAuthor from "./PostAuthor";
 
 const SinglePostPage = () => {
   const params = useParams();
 
   const post = useSelector((state) =>
     state.posts.find((post) => post.id === params.id)
-  )
+  );
 
   if (!post) {
     return (
@@ -21,7 +21,12 @@ const SinglePostPage = () => {
   return (
     <article className="post">
       <h2>{post.title}</h2>
+      <PostAuthor userId={post.user} />
+
       <p className="post-content">{post.content}</p>
+      <Link to={`/edit/${post.id}`} className="button">
+        Edit Post
+      </Link>
     </article>
   );
 };
