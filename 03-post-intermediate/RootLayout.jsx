@@ -27,9 +27,6 @@ const RootLayout = () => {
             <div className="navLinks">
               <NavLink to="/add">Add Post</NavLink>
             </div>
-            <div className="navLinks">
-              <NavLink to="/edit">Edit Post</NavLink>
-            </div>
           </div>
         </section>
       </nav>
