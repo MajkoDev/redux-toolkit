@@ -1,28 +1,28 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 const initialState = [
-  { id: "1", title: "First Post!", content: "Hello!" },
-  { id: "2", title: "Second Post", content: "More text" },
+  { id: "1", title: "First Post!", content: "Hello!", user: "0" },
+  { id: "2", title: "Second Post", content: "More text", user: "1" },
 ];
 
 export const postsSlice = createSlice({
   name: "posts",
   initialState,
   reducers: {
-    // function
-    // receives: current 'state' value, 'action' object that was dispatched
-    postAdded(state, action) {
-      state.push(action.payload);
-    },
-    prepare(title, content, userId) {
-      return {
-        payload: {
-          id: nanoid(),
-          title,
-          content,
-          user: userId,
-        },
-      };
+    postAdded: {
+      reducer(state, action) {
+        state.push(action.payload);
+      },
+      prepare(title, content, userId) {
+        return {
+          payload: {
+            id: nanoid(),
+            title,
+            content,
+            user: userId,
+          },
+        };
+      },
     },
     postUpdated(state, action) {
       const { id, title, content } = action.payload;
