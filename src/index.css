@@ -1,16 +1,56 @@
-* {
-  margin: 0;
-  padding: 0;
-}
+/* ? GENERAL STYLES */
+
 
 body {
+  /* Fonts */
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  color: #1a202c;
+  background-color: #fff;
+
   margin-top: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+
+}
+
+/* ? LAYOUT and CLASSES */
+
+.App{
+  width: 100vh;
+}
+
+main {
+  min-width: 100%;
+}
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ? LAYOUT and CLASSES */
 
 input {
   width: 300px;
@@ -48,10 +88,31 @@ button:hover {
   border: 1px black solid;
 }
 
-.navContent {
+
+
+
+/* ? NAVBAR */
+
+nav {
   display: flex;
-  flex-direction: row;
-  gap: 10px;
-  margin: 10px 0px;
-  font-weight: 700;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 0.3rem;
+  background-color: #0965e694;
+}
+.nav-menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem; 
+}
+
+nav p {
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav p:hover {
+  color: #dcdff8;
 }
