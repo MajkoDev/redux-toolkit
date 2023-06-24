@@ -8,15 +8,23 @@ const PostsList = () => {
   const posts = useSelector((state) => state.posts);
 
   const renderPosts = posts.map((post) => (
-    <article key={post.id} className="post-cart">
+    <article key={post.id} className="cart-small">
       <h3>{post.title}</h3>
       <PostAuthor userId={post.user} />
       <br />
-      <TimeAgo timestamp={post.date} />
       <p>{post.content}</p>
-      <Link to={`/posts/${post.id}`} className="button">
-        View Post
-      </Link>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <TimeAgo timestamp={post.date} />
+        <Link to={`/posts/${post.id}`} className="button">
+          View Post
+        </Link>
+      </div>
     </article>
   ));
 
