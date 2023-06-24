@@ -20,12 +20,19 @@ const SinglePostPage = () => {
   }
 
   return (
-    <article className="post">
+    <article className="cart-large ">
       <h2>{post.title}</h2>
-      <PostAuthor userId={post.user} />
-      <br />
-      <TimeAgo timestamp={post.date} />
-      <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <PostAuthor userId={post.user} />
+        <TimeAgo timestamp={post.date} />
+      </div>
+
       <p className="post-content">{post.content}</p>
       <Link to={`/edit/${post.id}`} className="button">
         Edit Post
