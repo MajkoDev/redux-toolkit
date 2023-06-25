@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PostAuthor from "./PostAuthor";
 import TimeAgo from "./TimeAgo";
+import ReactionButtons from "./ReactionButtons";
 
 const SinglePostPage = () => {
   const params = useParams();
@@ -34,6 +35,7 @@ const SinglePostPage = () => {
       </div>
 
       <p className="post-content">{post.content}</p>
+      <ReactionButtons post={post} />
       <Link to={`/edit/${post.id}`} className="button">
         Edit Post
       </Link>
