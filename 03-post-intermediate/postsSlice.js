@@ -9,7 +9,7 @@ const initialState = [
       "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     user: "0",
     date: sub(new Date(), { minutes: 10 }).toISOString(),
-    reactions: {thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0}
+    reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 },
   },
   {
     id: "2",
@@ -18,7 +18,7 @@ const initialState = [
       "Elementum eu facilisis sed odio. Adipiscing tristique risus nec feugiat in. Molestie a iaculis at erat. Leo urna molestie at elementum eu facilisis sed. Sit amet venenatis urna cursus eget.",
     user: "1",
     date: sub(new Date(), { minutes: 5 }).toISOString(),
-    reactions: {thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0}
+    reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 },
   },
 ];
 
@@ -38,6 +38,7 @@ export const postsSlice = createSlice({
             title,
             content,
             user: userId,
+            reactions: { thumbsUp: 0, hooray: 0, heart: 0, rocket: 0, eyes: 0 }
           },
         };
       },
