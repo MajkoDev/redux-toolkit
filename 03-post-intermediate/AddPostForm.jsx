@@ -4,7 +4,6 @@ import { postAdded } from "./postsSlice";
 import { useNavigate } from "react-router-dom";
 
 const AddPostForm = () => {
-
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -30,7 +29,6 @@ const AddPostForm = () => {
       setTitle("");
       setContent("");
       navigate(`/`);
-
     }
   };
 
@@ -57,6 +55,7 @@ const AddPostForm = () => {
 
         <label htmlFor="postAuthor">Author:</label>
         <select id="postAuthor" value={userId} onChange={onAuthorChange}>
+          <option value=""></option>
           {usersOptions}
         </select>
 
@@ -66,7 +65,7 @@ const AddPostForm = () => {
           id="postContent"
           value={content}
           onChange={onContentChange}
-        ></textarea>
+        />
 
         <button type="button" onClick={onSavePostClicked} disabled={!canSave}>
           Save Post
