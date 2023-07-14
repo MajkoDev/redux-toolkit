@@ -6,7 +6,7 @@ import {
   reset,
   incrementByAmount,
   decrementByAmount,
-} from "./counterSlice.js";
+} from "../redux/counterSlice.js";
 
 const Counter = () => {
   const dispatch = useDispatch();
